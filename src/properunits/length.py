@@ -27,6 +27,17 @@ _area_conv = {
     'A2' : lambda x: 1e-20*x,
 }
 
+_volume_names = {
+    'l' : ['liter', 'liters'],
+    'cm3' : ['cm^3'],
+    'm3' : ['m^3']
+}
+
+_volume_conv = {
+    'l' : lambda x: 1e-6*x,
+    'cm3' : lambda x: 1e-6*x,
+}
+
 
 class Length(Magnitude):
 
@@ -58,3 +69,19 @@ class Area(Magnitude):
     @property
     def units(self):
         return Area._units
+
+
+class Volume(Magnitude):
+
+    _units = 'm3'
+
+    def convert(self, val, units):
+        key = self.check_units(units, _volume_names)
+        if key == Volume._units:
+            self._x = val
+        else:
+            self._x = _volume_conv[key](val)
+
+    @property
+    def units(self):
+        return Volume._units
