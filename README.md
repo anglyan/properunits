@@ -17,8 +17,8 @@ be used anywhere without having to worry about unit conversion.
 
 ## Status
 
-Properunits is still in development. Please check spikelearn's
-documentation in [readthedocs]
+Properunits is still in development. Please check the
+documentation in readthedocs.
 
 
 ## Quick install
