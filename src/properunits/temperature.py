@@ -26,3 +26,5 @@ class Temperature(Magnitude):
     def units(self):
         return Temperature._units
 
+    def unit_list():
+        return list(_T_names.keys())
