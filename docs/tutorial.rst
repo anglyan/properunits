@@ -69,5 +69,21 @@ Here is a table of the magnitudes and units supported by ``properunits``:
    Volume         m3, l, cm3
    =============  ======
 
-More details TBD
+Working with arrays
+-------------------
+
+``properunits`` can also work with matrices and arrays:
+
+>>> import numpy as np
+>>> t = np.arange(0,200,10)
+>>> t
+array([  0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100, 110, 120,
+       130, 140, 150, 160, 170, 180, 190])
+>>> t_k = Temperature(t, 'C')
+>>> t_k.x
+array([273.15, 283.15, 293.15, 303.15, 313.15, 323.15, 333.15, 343.15,
+       353.15, 363.15, 373.15, 383.15, 393.15, 403.15, 413.15, 423.15,
+       433.15, 443.15, 453.15, 463.15])
+>>> 
+
 
