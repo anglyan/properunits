@@ -28,5 +28,5 @@ class Force(Magnitude):
     def units(self):
         return Force._units
 
-    def unit_list():
+    def list_units():
         return list(_f_names.keys())

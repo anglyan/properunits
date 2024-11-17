@@ -34,7 +34,7 @@ class Pressure(Magnitude):
     def units(self):
         return Pressure._units
     
-    def unit_list():
+    def list_units():
         return list(_p_names.keys())
 
 

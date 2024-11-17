@@ -7,6 +7,6 @@ def test_pressure():
     assert p.x == pytest.approx(1e7)
 
 def test_pressure_units():
-    Pressure.unit_list()
+    Pressure.list_units()
     
     

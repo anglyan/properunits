@@ -32,5 +32,5 @@ class Mass(Magnitude):
     def units(self):
         return Mass._units
 
-    def unit_list():
+    def list_units():
         return list(_mass_names.keys())

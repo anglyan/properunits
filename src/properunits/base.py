@@ -33,7 +33,7 @@ class Magnitude:
         """Return the converted units"""
         raise(NotImplementedError, "Units not defined")
 
-    def unit_list():
+    def list_units():
         raise(NotImplementedError, "list of units not implemented")
     
     def _convert(self, val, units):

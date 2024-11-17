@@ -30,5 +30,5 @@ class Energy(Magnitude):
     def units(self):
         return Energy._units
 
-    def unit_list():
+    def list_units():
         return list(_en_names.keys())

@@ -54,7 +54,7 @@ class Length(Magnitude):
     def units(self):
         return Length._units
 
-    def unit_list():
+    def list_units():
         return list(_length_names.keys())
 
 
@@ -73,7 +73,7 @@ class Area(Magnitude):
     def units(self):
         return Area._units
 
-    def unit_list():
+    def list_units():
         return list(_area_names.keys())
 
 
@@ -92,5 +92,5 @@ class Volume(Magnitude):
     def units(self):
         return Volume._units
 
-    def unit_list():
+    def list_units():
         return list(_volume_names.keys())
