@@ -12,21 +12,25 @@ class Magnitude:
         self.set(val, units)
 
     def set(self, val, units):
+        """Set a new value and units"""
         self._oval = val
         self._ounits = units
         self._convert(val, units)
 
     @property
     def value(self):
+        """Return the original value and units"""
         return self._oval, self._ounits
     
     
     @property
     def x(self):
+        """Return the converted value"""
         return self._x
 
     @property
     def units(self):
+        """Return the converted units"""
         raise(NotImplementedError, "Units not defined")
 
     
