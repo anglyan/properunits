@@ -6,7 +6,8 @@ _length_names = {
     'A' : ['Angstroms'],
     'in' : ['inch', 'inches'],
     'mi' : ['mile', 'miles'],
-    'yd' : ['yard', 'yards']
+    'yd' : ['yard', 'yards'],
+    'ft' : ['foot', 'feet']
 }
 
 _length_conv = {
@@ -15,19 +16,22 @@ _length_conv = {
     'in' : lambda x: 2.54e-2*x,
     'mi' : lambda x: 1609.34*x,
     'yd' : lambda x: 0.9144*x,
+    'ft' : lambda x: 0.3048*x
 }
 
 _area_names = {
     'm2' : ['m^2'],
     'nm2' : ['nm^2'],
     'A2' : ['A^2'],
-    'ha' : ['hectarea']
+    'ha' : ['hectarea'],
+    'ac' : ['acre']
 }
 
 _area_conv = {
     'nm2' : lambda x: 1e-18*x,
     'A2' : lambda x: 1e-20*x,
-    'ha' : lambda x: 1e4*x
+    'ha' : lambda x: 1e4*x,
+    'ac' : lambda x: 4046.856*x
 }
 
 _volume_names = {

@@ -59,10 +59,10 @@ Here is a table of the magnitudes and units supported by ``properunits``:
    =============  ======
    Magnitude      Units
    =============  ======
-   Area           m2, nm2, A2, ha
+   Area           m2, nm2, A2, ha, ac
    Energy         J, eV, cal, kWh, Btu
    Force          N, dyn, lbf, pdl
-   Length         m, nm, A, in, mi, yd
+   Length         m, nm, A, in, mi, yd, ft
    Mass           kg, g, lb, oz, t, Da
    Pressure       Pa, Torr, mTorr, atm, psi, ksi, bar
    Temperature    K, C, F
