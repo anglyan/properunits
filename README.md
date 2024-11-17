@@ -39,6 +39,8 @@ T = Temperature(100, 'C')
 p = Pressure(1, 'bar')
 
 print(T.x, T.units) # Return value in SI units.
+print(Temperature.list_units()) # Return list of temperature units
+print(T.value) # Return the original value, unit
 ```
 
 ## Copyright and license

@@ -1,6 +1,7 @@
 from .base import Magnitude
 
 _length_names = {
+    'm' : ['meter'],
     'nm' : ['nanometers'],
     'A' : ['Angstroms'],
     'in' : ['inch', 'inches'],
@@ -17,14 +18,16 @@ _length_conv = {
 }
 
 _area_names = {
+    'm2' : ['m^2'],
     'nm2' : ['nm^2'],
     'A2' : ['A^2'],
-    'm2' : ['m^2']
+    'ha' : ['hectarea']
 }
 
 _area_conv = {
     'nm2' : lambda x: 1e-18*x,
     'A2' : lambda x: 1e-20*x,
+    'ha' : lambda x: 1e4*x
 }
 
 _volume_names = {
