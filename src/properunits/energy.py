@@ -19,8 +19,8 @@ class Energy(Magnitude):
 
     _units = 'J'
 
-    def convert(self, val, units):
-        key = self.check_units(units, _en_names)
+    def _convert(self, val, units):
+        key = self._check_units(units, _en_names)
         if key == Energy._units:
             self._x = val
         else:

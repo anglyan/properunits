@@ -15,8 +15,8 @@ class Temperature(Magnitude):
 
     _units = 'K'
 
-    def convert(self, val, units):
-        key = self.check_units(units, _T_names)
+    def _convert(self, val, units):
+        key = self._check_units(units, _T_names)
         if key == Temperature._units:
             self._x = val
         else:

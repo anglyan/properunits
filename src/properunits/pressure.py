@@ -23,8 +23,8 @@ class Pressure(Magnitude):
 
     _units = 'Pa'
 
-    def convert(self, val, units):
-        key = self.check_units(units, _p_names)
+    def _convert(self, val, units):
+        key = self._check_units(units, _p_names)
         if key == Pressure._units:
             self._x = val
         else:

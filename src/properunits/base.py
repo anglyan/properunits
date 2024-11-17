@@ -4,8 +4,8 @@ class Magnitude:
     
     A physical magnitude comprises a numerical value with units.
 
-    These units are converted back to a default representation when
-    the value is set. The original value and units are 
+    The magnitude is converted to SI units as it is defined. The
+    original value and units are still preserved.
     """
 
     def __init__(self, val, units=None):
@@ -14,10 +14,10 @@ class Magnitude:
     def set(self, val, units):
         self._oval = val
         self._ounits = units
-        self.convert(val, units)
+        self._convert(val, units)
 
     @property
-    def val(self):
+    def value(self):
         return self._oval, self._ounits
     
     
@@ -30,10 +30,10 @@ class Magnitude:
         raise(NotImplementedError, "Units not defined")
 
     
-    def convert(self, val, units):
+    def _convert(self, val, units):
         raise(NotImplementedError, "Conversion not implemented")
     
-    def check_units(self, units, unit_dict):
+    def _check_units(self, units, unit_dict):
         if units in unit_dict.keys():
             return units
         else:

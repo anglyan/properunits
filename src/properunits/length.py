@@ -43,8 +43,8 @@ class Length(Magnitude):
 
     _units = 'm'
 
-    def convert(self, val, units):
-        key = self.check_units(units, _length_names)
+    def _convert(self, val, units):
+        key = self._check_units(units, _length_names)
         if key == Length._units:
             self._x = val
         else:
@@ -59,8 +59,8 @@ class Area(Magnitude):
 
     _units = 'm2'
 
-    def convert(self, val, units):
-        key = self.check_units(units, _area_names)
+    def _convert(self, val, units):
+        key = self._check_units(units, _area_names)
         if key == Area._units:
             self._x = val
         else:
@@ -75,8 +75,8 @@ class Volume(Magnitude):
 
     _units = 'm3'
 
-    def convert(self, val, units):
-        key = self.check_units(units, _volume_names)
+    def _convert(self, val, units):
+        key = self._check_units(units, _volume_names)
         if key == Volume._units:
             self._x = val
         else:
