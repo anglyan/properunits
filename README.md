@@ -12,13 +12,14 @@ downstream calculations are all done consistently.
 Properunits does not attempt to do universal unit conversion
 or tries to implement operations that preserve and transform
 the units. It is meant to extract numerical values that can
-be used anywhere without having to worry about unit conversion.
+be used anywhere without having to worry about unit conversion,
+while keeping information on the original value and units used.
 
 
 ## Status
 
 Properunits is still in development. Please check the
-documentation in readthedocs.
+documentation in [readthedocs](https://properunits.readthedocs.io/en/latest/).
 
 
 ## Quick install
@@ -37,7 +38,7 @@ from properunits import Temperature, Pressure
 T = Temperature(100, 'C')
 p = Pressure(1, 'bar')
 
-print(T.x, p.x) # Return value in SI units.
+print(T.x, T.units) # Return value in SI units.
 ```
 
 ## Copyright and license
