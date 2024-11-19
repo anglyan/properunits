@@ -37,12 +37,14 @@ _area_conv = {
 _volume_names = {
     'l' : ['liter', 'liters'],
     'cm3' : ['cm^3'],
-    'm3' : ['m^3']
+    'm3' : ['m^3'],
+    'gal' : ['gallons', 'gallon']
 }
 
 _volume_conv = {
     'l' : lambda x: 1e-6*x,
     'cm3' : lambda x: 1e-6*x,
+    'gal' : lambda x: 3.785411784e-6*x
 }
 
 

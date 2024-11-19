@@ -66,7 +66,7 @@ Here is a table of the magnitudes and units supported by ``properunits``:
    Mass           kg, g, lb, oz, t, Da
    Pressure       Pa, Torr, mTorr, atm, psi, ksi, bar
    Temperature    K, C, F
-   Volume         m3, l, cm3
+   Volume         m3, l, cm3, gal(US)
    =============  ======
 
 Working with arrays
