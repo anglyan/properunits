@@ -37,7 +37,7 @@ We can now query the SI magnitude:
 
 And its units:
 
->>> t.units
+>>> t.unit
 'K'
 
 Or remenber the original value:

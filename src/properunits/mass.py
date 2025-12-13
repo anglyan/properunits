@@ -19,18 +19,18 @@ _mass_conv = {
 
 class Mass(Magnitude):
 
-    _units = 'kg'
+    _unit = 'kg'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _mass_names)
-        if key == Mass._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _mass_names)
+        if key == Mass._unit:
             self._x = val
         else:
             self._x = _mass_conv[key](val)
 
     @property
-    def units(self):
-        return Mass._units
+    def unit(self):
+        return Mass._unit
 
     def list_units():
         return list(_mass_names.keys())

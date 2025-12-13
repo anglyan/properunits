@@ -50,18 +50,18 @@ _volume_conv = {
 
 class Length(Magnitude):
 
-    _units = 'm'
+    _unit = 'm'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _length_names)
-        if key == Length._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _length_names)
+        if key == Length._unit:
             self._x = val
         else:
             self._x = _length_conv[key](val)
 
     @property
-    def units(self):
-        return Length._units
+    def unit(self):
+        return Length._unit
 
     def list_units():
         return list(_length_names.keys())
@@ -69,18 +69,18 @@ class Length(Magnitude):
 
 class Area(Magnitude):
 
-    _units = 'm2'
+    _unit = 'm2'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _area_names)
-        if key == Area._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _area_names)
+        if key == Area._unit:
             self._x = val
         else:
             self._x = _area_conv[key](val)
 
     @property
-    def units(self):
-        return Area._units
+    def unit(self):
+        return Area._unit
 
     def list_units():
         return list(_area_names.keys())
@@ -88,18 +88,18 @@ class Area(Magnitude):
 
 class Volume(Magnitude):
 
-    _units = 'm3'
+    _unit = 'm3'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _volume_names)
-        if key == Volume._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _volume_names)
+        if key == Volume._unit:
             self._x = val
         else:
             self._x = _volume_conv[key](val)
 
     @property
     def units(self):
-        return Volume._units
+        return Volume._unit
 
     def list_units():
         return list(_volume_names.keys())

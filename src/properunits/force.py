@@ -15,18 +15,18 @@ _f_conv = {
 
 class Force(Magnitude):
 
-    _units = 'N'
+    _unit = 'N'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _f_names)
-        if key == Force._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _f_names)
+        if key == Force._unit:
             self._x = val
         else:
             self._x = _f_conv[key](val)
 
     @property
-    def units(self):
-        return Force._units
+    def unit(self):
+        return Force._unit
 
     def list_units():
         return list(_f_names.keys())

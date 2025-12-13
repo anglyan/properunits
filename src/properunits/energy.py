@@ -17,18 +17,18 @@ _en_conv = {
 
 class Energy(Magnitude):
 
-    _units = 'J'
+    _unit = 'J'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _en_names)
-        if key == Energy._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _en_names)
+        if key == Energy._unit:
             self._x = val
         else:
             self._x = _en_conv[key](val)
 
     @property
-    def units(self):
-        return Energy._units
+    def unit(self):
+        return Energy._unit
 
     def list_units():
         return list(_en_names.keys())

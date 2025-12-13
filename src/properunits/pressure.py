@@ -21,18 +21,18 @@ _p_conv = {
 
 class Pressure(Magnitude):
 
-    _units = 'Pa'
+    _unit = 'Pa'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _p_names)
-        if key == Pressure._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _p_names)
+        if key == Pressure._unit:
             self._x = val
         else:
             self._x = _p_conv[key](val)
 
     @property
-    def units(self):
-        return Pressure._units
+    def unit(self):
+        return Pressure._unit
     
     def list_units():
         return list(_p_names.keys())

@@ -8,19 +8,19 @@ class Magnitude:
     original value and units are still preserved.
     """
 
-    def __init__(self, val, units=None):
-        self.set(val, units)
+    def __init__(self, val, unit=None):
+        self.set(val, unit)
 
-    def set(self, val, units):
-        """Set a new value and units"""
+    def set(self, val, unit):
+        """Set a new value and unit"""
         self._oval = val
-        self._ounits = units
-        self._convert(val, units)
+        self._ounit = unit
+        self._convert(val, unit)
 
     @property
     def value(self):
         """Return the original value and units"""
-        return self._oval, self._ounits
+        return self._oval, self._ounit
     
     
     @property
@@ -29,8 +29,8 @@ class Magnitude:
         return self._x
 
     @property
-    def units(self):
-        """Return the converted units"""
+    def unit(self):
+        """Return the converted unit"""
         raise(NotImplementedError, "Units not defined")
 
     def list_units():
@@ -39,12 +39,12 @@ class Magnitude:
     def _convert(self, val, units):
         raise(NotImplementedError, "Conversion not implemented")
     
-    def _check_units(self, units, unit_dict):
-        if units in unit_dict.keys():
-            return units
+    def _check_unit(self, unit, unit_dict):
+        if unit in unit_dict.keys():
+            return unit
         else:
             for k, v in unit_dict.items():
-                if units in v:
+                if unit in v:
                     return k
             return None
         

@@ -13,18 +13,18 @@ _T_conv = {
 
 class Temperature(Magnitude):
 
-    _units = 'K'
+    _unit = 'K'
 
-    def _convert(self, val, units):
-        key = self._check_units(units, _T_names)
-        if key == Temperature._units:
+    def _convert(self, val, unit):
+        key = self._check_unit(unit, _T_names)
+        if key == Temperature._unit:
             self._x = val
         else:
             self._x = _T_conv[key](val)
 
     @property
     def units(self):
-        return Temperature._units
+        return Temperature._unit
 
     def list_units():
         return list(_T_names.keys())
