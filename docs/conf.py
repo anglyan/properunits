@@ -13,9 +13,9 @@ sys.path.insert(0, os.path.abspath("../src"))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'properunits'
-copyright = '2024, Angel Yanguas-Gil'
+copyright = '2024-2025, Angel Yanguas-Gil'
 author = 'Angel Yanguas-Gil'
-release = '0.0.3'
+release = '0.1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
