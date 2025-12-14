@@ -62,7 +62,7 @@ class Temperature(Magnitude):
             self._x = _T_conv[key](val)
 
     @property
-    def units(self):
+    def unit(self):
         return Temperature._unit
 
     def list_units():
