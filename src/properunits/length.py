@@ -49,6 +49,46 @@ _volume_conv = {
 
 
 class Length(Magnitude):
+    """Length magnitude with automatic conversion to SI units (meters).
+
+    The Length class represents physical length quantities and automatically
+    converts input values to the SI unit (meters) regardless of the input unit.
+    The class supports various common length units including metric and imperial systems.
+
+    Attributes:
+        _unit (str): The SI unit for length (meters, 'm')
+
+    Supported Units:
+        - 'm': meters (SI unit) - also accepts 'meter'
+        - 'nm': nanometers - also accepts 'nanometers'
+        - 'A': Angstroms - also accepts 'Angstroms'
+        - 'in': inches - also accepts 'inch', 'inches'
+        - 'mi': miles - also accepts 'mile', 'miles'
+        - 'yd': yards - also accepts 'yard', 'yards'
+        - 'ft': feet - also accepts 'foot', 'feet'
+
+    Examples:
+        >>> length = Length(12, 'in')
+        >>> length.x  # Value in meters (SI)
+        0.3048
+        >>> length.value  # Original value and unit
+        (12, 'in')
+        >>> length.unit
+        'm'
+
+        >>> length2 = Length(5, 'ft')
+        >>> length2.x  # Value in meters
+        1.524
+
+        >>> Length.list_units()
+        ['m', 'nm', 'A', 'in', 'mi', 'yd', 'ft']
+
+    Notes:
+        - Input values are immediately converted to meters upon instantiation
+        - Original values and units are preserved and accessible via the `value` property
+        - The converted SI value is accessible via the `x` property (inherited from Magnitude)
+        - Unit names are case-sensitive for the primary keys but aliases are provided
+    """
 
     _unit = 'm'
 
@@ -68,6 +108,44 @@ class Length(Magnitude):
 
 
 class Area(Magnitude):
+    """Area magnitude with automatic conversion to SI units (square meters).
+
+    The Area class represents physical area quantities and automatically
+    converts input values to the SI unit (square meters) regardless of the input unit.
+    The class supports various common area units including metric and imperial systems.
+
+    Attributes:
+        _unit (str): The SI unit for area (square meters, 'm2')
+
+    Supported Units:
+        - 'm2': square meters (SI unit) - also accepts 'm^2'
+        - 'nm2': square nanometers - also accepts 'nm^2'
+        - 'A2': square Angstroms - also accepts 'A^2'
+        - 'ha': hectares - also accepts 'hectarea'
+        - 'ac': acres - also accepts 'acre'
+
+    Examples:
+        >>> area = Area(1, 'ha')
+        >>> area.x  # Value in square meters (SI)
+        10000.0
+        >>> area.value  # Original value and unit
+        (1, 'ha')
+        >>> area.unit
+        'm2'
+
+        >>> area2 = Area(5, 'ac')
+        >>> area2.x  # Value in square meters
+        20234.28
+
+        >>> Area.list_units()
+        ['m2', 'nm2', 'A2', 'ha', 'ac']
+
+    Notes:
+        - Input values are immediately converted to square meters upon instantiation
+        - Original values and units are preserved and accessible via the `value` property
+        - The converted SI value is accessible via the `x` property (inherited from Magnitude)
+        - Unit names are case-sensitive for the primary keys but aliases are provided
+    """
 
     _unit = 'm2'
 
@@ -87,6 +165,44 @@ class Area(Magnitude):
 
 
 class Volume(Magnitude):
+    """Volume magnitude with automatic conversion to SI units (cubic meters).
+
+    The Volume class represents physical volume quantities and automatically
+    converts input values to the SI unit (cubic meters) regardless of the input unit.
+    The class supports various common volume units including liters, cubic centimeters, and gallons.
+
+    Attributes:
+        _unit (str): The SI unit for volume (cubic meters, 'm3')
+
+    Supported Units:
+        - 'm3': cubic meters (SI unit) - also accepts 'm^3'
+        - 'l': liters - also accepts 'liter', 'liters'
+        - 'cm3': cubic centimeters - also accepts 'cm^3'
+        - 'gal': gallons - also accepts 'gallon', 'gallons'
+
+    Examples:
+        >>> vol = Volume(10, 'l')
+        >>> vol.x  # Value in cubic meters (SI)
+        1e-05
+        >>> vol.value  # Original value and unit
+        (10, 'l')
+        >>> vol.units  # Note: uses 'units' property
+        'm3'
+
+        >>> vol2 = Volume(5, 'gal')
+        >>> vol2.x  # Value in cubic meters
+        1.892705892e-05
+
+        >>> Volume.list_units()
+        ['l', 'cm3', 'm3', 'gal']
+
+    Notes:
+        - Input values are immediately converted to cubic meters upon instantiation
+        - Original values and units are preserved and accessible via the `value` property
+        - The converted SI value is accessible via the `x` property (inherited from Magnitude)
+        - Unit names are case-sensitive for the primary keys but aliases are provided
+        - Note: This class uses `units` property instead of `unit` (different from other classes)
+    """
 
     _unit = 'm3'
 
